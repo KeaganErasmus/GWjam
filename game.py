@@ -138,6 +138,9 @@ class Game:
         pygame.mixer.music.play(-1)
         pygame.mixer.music.set_volume(0.2)
 
+        self.scores.clear()
+        self.score = 0
+
         while True:
             self.screen.fill("black")
             self.screen.blit(pygame.transform.scale(self.background, self.screen.get_size()), (0, 0))
@@ -157,7 +160,7 @@ class Game:
                         sys.exit()
 
 
-            MENU_TEXT = self.get_font(50).render("Bag-io", True, "#b68f40")
+            MENU_TEXT = self.get_font(50).render("Bagio", True, "#b68f40")
             MENU_RECT = MENU_TEXT.get_rect(center=(self.screen.get_width()/2, 100))
 
             PLAY_BUTTON = Button(None, pos=(self.screen.get_width()/2, 250), 
